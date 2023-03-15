@@ -1,5 +1,5 @@
-import { useRef, useEffect } from "react";
-import { useDelayedStackReturnType } from "./types";
+import { useRef, useEffect } from 'react';
+import { useDelayedStackReturnType } from './types';
 
 const useDelayedStack = <T>(
   callback: (data: T[]) => void,
@@ -10,16 +10,7 @@ const useDelayedStack = <T>(
   const timerRef = useRef<NodeJS.Timeout | string | number | undefined>(
     undefined
   );
-  const abortControllerRef = useRef<AbortController | null>(null);
-
-  const createAbortController = () => {
-    abortControllerRef.current = new AbortController();
-    abortControllerRef.current.signal.addEventListener("abort", () => {
-      clearInterval(timerRef.current);
-    });
-  };
-
-  createAbortController();
+  const abortController = new AbortController();
 
   useEffect(() => {
     timerRef.current = setInterval(() => {
@@ -29,18 +20,22 @@ const useDelayedStack = <T>(
       }
     }, delay);
 
+    abortController.signal.addEventListener('abort', () => {
+      clearInterval(timerRef.current);
+    });
+
     return () => {
       clearInterval(timerRef.current);
-      abortControllerRef.current?.abort();
+      abortController?.abort();
     };
-  }, [callback, delay]);
+  }, [callback, delay, abortController]);
 
   const pushToStack = (value: T) =>
     (stackRef.current = [...stackRef.current, value]);
 
   const cancel = () => {
-    abortControllerRef.current?.abort();
-    createAbortController();
+    clearInterval(timerRef.current);
+    abortController?.abort();
   };
 
   return [pushToStack, cancel];

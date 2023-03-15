@@ -10,7 +10,7 @@
   "author": "Sepehr Karimi <karimi.sepehr2@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": " nx run-many --targets=lint,test,build --all"
+    "build": "nx run-many --targets=lint,test,build --all"
   },
   "private": true,
   "keywords": [
