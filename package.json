@@ -2,12 +2,6 @@
   "name": "react-utils",
   "version": "1.0.0",
   "description": "A collection of useful React Hooks, utilities and Components.",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/d/index.d.ts",
-  "files": [
-    "/dist"
-  ],
   "homepage": "https://github.com/sepehr09/react-hook",
   "repository": {
     "type": "git",
@@ -15,7 +9,10 @@
   },
   "author": "Sepehr Karimi <karimi.sepehr2@gmail.com>",
   "license": "MIT",
-  "private": false,
+  "scripts": {
+    "build": " nx run-many --targets=lint,test,build --all"
+  },
+  "private": true,
   "keywords": [
     "react-utils",
     "utils",
@@ -24,24 +21,14 @@
     "react hooks",
     "react hook"
   ],
-  "peerDependencies": {
-    "react": "^16.8.0 || ^17 || ^18",
-    "react-dom": "^16.8.0 || ^17 || ^18"
-  },
-  "engines": {
-    "node": ">=12.22.0"
-  },
   "dependencies": {},
-  "scripts": {
-    "prepare": "yarn build",
-    "build": "rm -rf dist && yarn build:ts:esm && yarn build:ts:cjs",
-    "build:ts:esm": "tsc -p tsconfig.json",
-    "build:ts:cjs": "tsc -p tsconfig.cjs.json"
-  },
   "devDependencies": {
-    "@types/node": "^18.15.3",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
+    "@nrwl/nx-cloud": "latest",
+    "nx": "15.8.6",
+    "prettier": "^2.6.2",
     "typescript": "^4.9.5"
-  }
+  },
+  "workspaces": [
+    "packages/hooks/*"
+  ]
 }
