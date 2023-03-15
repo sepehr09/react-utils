@@ -10,15 +10,15 @@ The purpose of the useDelayedStack hook is to allow for efficient handling of re
 ## Installation
 
 ```sh
-npm install @react-utils/use-delayed-stack
+npm install @reactutils/use-delayed-stack
 
 # or
 
-yarn add @react-utils/use-delayed-stack
+yarn add @reactutils/use-delayed-stack
 ```
 
 
-This is a custom React hook named `useDelayedStack`. It takes in three arguments:
+This is a custom React hook named `use-delayed-stack`. It takes in three arguments:
 
 `callback`: A function that takes an array of type T as its argument and returns void. This function will be called whenever the stack is flushed.
 
