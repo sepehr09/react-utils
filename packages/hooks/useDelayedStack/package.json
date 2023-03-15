@@ -10,6 +10,14 @@
     "url": "git+https://github.com/sepehr09/react-hook.git",
     "directory": "src/hooks/useDelayedStack"
   },
+  "keywords": [
+    "useDelayedStack",
+    "react hook",
+    "stack",
+    "socket",
+    "periodic",
+    "real time"
+  ],
   "main": "./index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/d/index.d.ts",

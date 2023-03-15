@@ -1,1 +1,1 @@
-export { default } from "./useDelayedStack";
+export { default } from './useDelayedStack';

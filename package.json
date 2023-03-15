@@ -9,10 +9,7 @@
   },
   "author": "Sepehr Karimi <karimi.sepehr2@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "build": "nx run-many --targets=lint,test,build --all"
-  },
-  "private": true,
+  "private": false,
   "keywords": [
     "react-utils",
     "utils",
@@ -22,13 +19,5 @@
     "react hook"
   ],
   "dependencies": {},
-  "devDependencies": {
-    "@nrwl/nx-cloud": "latest",
-    "nx": "15.8.6",
-    "prettier": "^2.6.2",
-    "typescript": "^4.9.5"
-  },
-  "workspaces": [
-    "packages/hooks/*"
-  ]
+  "devDependencies": {}
 }
