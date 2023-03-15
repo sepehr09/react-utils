@@ -3,7 +3,7 @@ import { useDelayedStackReturnType } from './types';
 
 const useDelayedStack = <T>(
   callback: (data: T[]) => void,
-  delay: number,
+  delay: number = 1000,
   initialValue: T[] = []
 ): useDelayedStackReturnType<T> => {
   const stackRef = useRef<T[]>(initialValue);
