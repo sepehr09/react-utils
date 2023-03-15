@@ -1,0 +1,26 @@
+{
+  "name": "@react-utils/useDelayedStack",
+  "version": "1.0.0",
+  "description": "a React hook used for batching real-time or periodic data processing by accumulating data in a stack and calling a callback function with a specified delay.",
+  "author": "Sepehr Karimi <karimi.sepehr2@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sepehr09/react-hook.git",
+    "directory": "src/hooks/useDelayedStack"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/d/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17 || ^18",
+    "react-dom": "^16.8.0 || ^17 || ^18"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
