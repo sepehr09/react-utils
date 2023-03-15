@@ -19,9 +19,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     // "noEmit": true,
-    "jsx": "react-jsx",
-    "composite": true,
-    "incremental": true
+    "jsx": "react-jsx"
   },
   "include": ["./"],
   "exclude": ["dist", "node_modules"]
