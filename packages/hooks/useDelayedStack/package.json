@@ -1,6 +1,6 @@
 {
   "name": "@reactutils/use-delayed-stack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a React hook used for batching real-time or periodic data processing by accumulating data in a stack and calling a callback function with a specified delay.",
   "author": "Sepehr Karimi <karimi.sepehr2@gmail.com>",
   "license": "MIT",
