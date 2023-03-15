@@ -1,0 +1,23 @@
+{
+  "name": "react-utils",
+  "version": "1.0.0",
+  "description": "A collection of useful React Hooks, utilities and Components.",
+  "homepage": "https://github.com/sepehr09/react-hook",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sepehr09/react-hook.git"
+  },
+  "author": "Sepehr Karimi <karimi.sepehr2@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "react-utils",
+    "utils",
+    "utility",
+    "hooks",
+    "react hooks",
+    "react hook"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}

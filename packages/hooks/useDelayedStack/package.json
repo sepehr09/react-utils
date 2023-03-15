@@ -1,0 +1,45 @@
+{
+  "name": "@react-utils/useDelayedStack",
+  "version": "1.0.0",
+  "description": "a React hook used for batching real-time or periodic data processing by accumulating data in a stack and calling a callback function with a specified delay.",
+  "author": "Sepehr Karimi <karimi.sepehr2@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sepehr09/react-hook.git",
+    "directory": "src/hooks/useDelayedStack"
+  },
+  "keywords": [
+    "useDelayedStack",
+    "react hook",
+    "stack",
+    "socket",
+    "periodic",
+    "real time"
+  ],
+  "main": "./index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/d/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && yarn build:ts:esm && yarn build:ts:cjs",
+    "build:ts:esm": "tsc -p tsconfig.json",
+    "build:ts:cjs": "tsc -p tsconfig.cjs.json"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17 || ^18",
+    "react-dom": "^16.8.0 || ^17 || ^18"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.3",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "typescript": "^4.9.5"
+  },
+  "engines": {
+    "node": ">=12.22.0"
+  }
+}
