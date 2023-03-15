@@ -23,10 +23,6 @@
     "composite": true,
     "incremental": true
   },
-  // "paths": {
-  //   "@react-utils/useDelayedStack": ["./src/hooks/useDelayedStack"],
-  //   "@react-utils/useDelayedStack/*": ["./src/hooks/useDelayedStack/*"]
-  // },
   "include": ["./"],
   "exclude": ["dist", "node_modules"]
 }
