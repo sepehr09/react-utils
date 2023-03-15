@@ -1,5 +1,7 @@
 # useDelayedStack
 
+[![NPM](https://img.shields.io/npm/v/@reactutils/use-delayed-stack.svg)][package-npm-link]
+
 > a React hook used for batching real-time or periodic data processing by accumulating data in a stack and calling a callback function with a specified delay.
 
 The purpose of the useDelayedStack hook is to allow for efficient handling of real-time or periodic data by accumulating it in a stack over time and calling a user-provided callback function after a specified delay. This allows for batching of data processing, resulting in improved performance over calling the callback function for each individual data point.
@@ -43,3 +45,5 @@ pushToStack(value);
 // To stop the timer manually
 cancel();
 ```
+
+[package-npm-link]: https://www.npmjs.com/package/@reactutils/use-delayed-stack
