@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "module": "esnext",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext", "es6", "es2016", "es2017"],
     "allowJs": true,
@@ -7,18 +8,15 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
     "moduleResolution": "node",
-    "outDir": "./dist/esm",
-    "declarationDir": "./dist/d",
+    "outDir": "dist/esm",
     "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
+    "declarationDir": "dist/d",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    // "noEmit": true,
+    "removeComments": true,
     "jsx": "react-jsx"
   },
   "include": ["index.ts"],

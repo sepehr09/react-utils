@@ -12,12 +12,11 @@
     "outDir": "./dist/esm",
     "declarationDir": "./dist/d",
     "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "removeComments": true,
     // "noEmit": true,
     "jsx": "react-jsx"
   },
