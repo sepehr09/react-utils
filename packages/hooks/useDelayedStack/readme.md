@@ -1,10 +1,11 @@
-# useDelayedStack
+# @reactutils/use-delayed-stack
 
 [![NPM](https://img.shields.io/npm/v/@reactutils/use-delayed-stack.svg)][package-npm-link]
+[![NPM](https://img.shields.io/bundlephobia/min/@reactutils/use-delayed-stack)][package-bundlephobia]
 
 > a React hook used for batching real-time or periodic data processing by accumulating data in a stack and calling a callback function with a specified delay.
 
-The purpose of the useDelayedStack hook is to allow for efficient handling of real-time or periodic data by accumulating it in a stack over time and calling a user-provided callback function after a specified delay. This allows for batching of data processing, resulting in improved performance over calling the callback function for each individual data point.
+The purpose of the use-delayed-stack hook is to allow for efficient handling of real-time or periodic data by accumulating it in a stack over time and calling a user-provided callback function after a specified delay. This allows for batching of data processing, resulting in improved performance over calling the callback function for each individual data point.
 
 
 ## Installation
@@ -37,6 +38,8 @@ Whenever the timer is triggered, it checks if the stack has any items, and if it
 ## Usage:
 
 ```ts
+import useDelayedStack from '@reactutils/use-delayed-stack';
+
 const [pushToStack, cancel] = useDelayedStack(callback, delay, initialValue);
 
 // To push a value onto the stack
@@ -47,3 +50,4 @@ cancel();
 ```
 
 [package-npm-link]: https://www.npmjs.com/package/@reactutils/use-delayed-stack
+[package-bundlephobia]: https://bundlephobia.com/package/@reactutils/use-delayed-stack
