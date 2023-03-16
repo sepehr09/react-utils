@@ -1,6 +1,7 @@
-# usePrevious
+# @reactutils/use-previous
 
 [![NPM](https://img.shields.io/npm/v/@reactutils/use-previous.svg)][package-npm-link]
+[![NPM](https://img.shields.io/bundlephobia/min/@reactutils/use-previous)][package-bundlephobia]
 
 > A custom hook that uses the useRef hook internally for storing the previous value.
 
@@ -18,6 +19,8 @@ yarn add @reactutils/use-previous
 ## Usage
 
 ```jsx
+import usePrevious from '@reactutils/use-previous';
+
 function App() {
   // State value and setter for our example
   const [count, setCount] = useState<number>(0);
@@ -37,3 +40,4 @@ function App() {
 ```
 
 [package-npm-link]: https://www.npmjs.com/package/@reactutils/use-previous
+[package-bundlephobia]: https://bundlephobia.com/package/@reactutils/use-previous
