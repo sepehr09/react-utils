@@ -1,0 +1,40 @@
+{
+  "name": "@reactutils/use-previous",
+  "version": "1.0.0",
+  "description": "A custom hook that uses the useRef hook internally for storing the previous value.",
+  "author": "Sepehr Karimi <karimi.sepehr2@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/sepehr09/react-utils.git",
+    "directory": "package/hooks/usePrevious"
+  },
+  "homepage": "https://github.com/sepehr09/react-utils/tree/main/packages/hooks/usePrevious",
+  "keywords": [
+    "usePrevious",
+    "react hook",
+    "previous"
+  ],
+  "main": "./index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/d/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && yarn build:rollup",
+    "build:rollup": "NODE_ENV=production rollup -c --bundleConfigAsCjs",
+    "build:tsc": "rm -rf dist && yarn build:ts:esm && yarn build:ts:cjs",
+    "build:ts:esm": "tsc -p tsconfig.json",
+    "build:ts:cjs": "tsc -p tsconfig.cjs.json"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17 || ^18",
+    "react-dom": "^16.8.0 || ^17 || ^18"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=12.22.0"
+  }
+}
