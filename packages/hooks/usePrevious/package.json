@@ -1,6 +1,6 @@
 {
   "name": "@reactutils/use-previous",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "A custom hook that uses the useRef hook internally for storing the previous value.",
   "author": "Sepehr Karimi <karimi.sepehr2@gmail.com>",
   "license": "MIT",
