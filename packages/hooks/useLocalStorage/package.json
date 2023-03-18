@@ -1,0 +1,44 @@
+{
+  "name": "@reactutils/use-local-storage",
+  "version": "1.0.0",
+  "description": "A custom hook that provides a simple interface to the browser's local storage.",
+  "author": "Sepehr Karimi <karimi.sepehr2@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/sepehr09/react-utils.git",
+    "directory": "package/hooks/useLocalStorage"
+  },
+  "homepage": "https://github.com/sepehr09/react-utils/tree/main/packages/hooks/useLocalStorage",
+  "keywords": [
+    "react",
+    "hooks",
+    "useLocalStorage",
+    "use-local-storage",
+    "react hook",
+    "local storage",
+    "localstorage"
+  ],
+  "main": "./index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/d/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && yarn build:rollup",
+    "build:rollup": "NODE_ENV=production rollup -c --bundleConfigAsCjs",
+    "build:tsc": "rm -rf dist && yarn build:ts:esm && yarn build:ts:cjs",
+    "build:ts:esm": "tsc -p tsconfig.json",
+    "build:ts:cjs": "tsc -p tsconfig.cjs.json"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17 || ^18",
+    "react-dom": "^16.8.0 || ^17 || ^18"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=12.22.0"
+  }
+}
