@@ -1,4 +1,4 @@
-# @react-utils
+# @reactutils
 A collection of useful React Hooks, utilities and Components.
 
 # List of all hooks
