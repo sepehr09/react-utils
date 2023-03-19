@@ -1,4 +1,7 @@
-# @reactutils
+# [@reactutils](https://www.npmjs.com/org/reactutils)
+
+![GitHub](https://img.shields.io/github/license/sepehr09/react-utils)
+
 A collection of useful React Hooks, utilities and Components.
 
 # List of all hooks
