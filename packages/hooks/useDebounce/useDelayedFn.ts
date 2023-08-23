@@ -5,7 +5,7 @@ import type { DebouncedState, Options } from './types';
  * @example
  *```ts
  *import React, { useState } from 'react';
- *import { useDelayedFn } from '@reactutils/useDebounce';
+ *import { useDelayedFn } from '@reactutils/use-debounce';
  *
  *function Input({ defaultValue }) {
  *  const [value, setValue] = useState(defaultValue);

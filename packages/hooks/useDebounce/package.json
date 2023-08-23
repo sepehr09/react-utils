@@ -1,6 +1,6 @@
 {
   "name": "@reactutils/use-debounce",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "this hook delays function execution until a specified period of inactivity, useful for optimizing user input-related actions.",
   "author": "Alireza Hamzeh <alireza.hamzeh7713@gmail.com>",
   "license": "MIT",

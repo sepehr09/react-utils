@@ -31,7 +31,7 @@ function useOptimizedStateUpdater<T>(initialState: T): [T, Dispatch<T>] {
  * @example
  *```ts
  *import React, { useState } from 'react';
- *import useDebounce from '@reactutils/useDebounce';
+ *import useDebounce from '@reactutils/use-debounce';
  *
  *export default function Input() {
  *  const [text, setText] = useState('Hello');

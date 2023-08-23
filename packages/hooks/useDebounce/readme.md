@@ -1,24 +1,24 @@
-# `@reactutils/useDebounce` Documentation
+# @reactutils/use-debounce
 
-[![NPM](https://img.shields.io/npm/v/@reactutils/useDebounce.svg)][package-npm-link]
-[![NPM](https://img.shields.io/bundlephobia/min/@reactutils/useDebounce)][package-bundlephobia]
+[![NPM](https://img.shields.io/npm/v/@reactutils/use-debounce.svg)][package-npm-link]
+[![NPM](https://img.shields.io/bundlephobia/min/@reactutils/use-debounce)][package-bundlephobia]
 
 
 ## Installation
 
-You can install the `@reactutils/useDebounce` package using either npm or Yarn:
+You can install the `@reactutils/use-debounce` package using either npm or Yarn:
 
 ```sh
-npm install @reactutils/useDebounce
+npm install @reactutils/use-debounce
 
 # or
 
-yarn add @reactutils/useDebounce
+yarn add @reactutils/use-debounce
 ```
 
 ## Overview
 
-The `@reactutils/useDebounce` package provides two main hooks for managing debounce behavior in React applications: `useDebounce` and `useDelayedFn`. These hooks are designed to assist in scenarios where you need to limit the frequency of function calls or updates based on a certain time delay.
+The `@reactutils/use-debounce` package provides two main hooks for managing debounce behavior in React applications: `useDebounce` and `useDelayedFn`. These hooks are designed to assist in scenarios where you need to limit the frequency of function calls or updates based on a certain time delay.
 
 ## Usage of `useDebounce`
 
@@ -26,7 +26,7 @@ The `useDebounce` hook allows you to debounce the changes to a value within a sp
 
 ```jsx
 import React, { useState } from 'react';
-import useDebounce from '@reactutils/useDebounce';
+import useDebounce from '@reactutils/use-debounce';
 
 export default function Input() {
   const [text, setText] = useState('Hello');
@@ -53,7 +53,7 @@ The `useDelayedFn` hook is suitable for situations where you want to debounce th
 
 ```jsx
 import React, { useState } from 'react';
-import { useDelayedFn } from '@reactutils/useDebounce';
+import { useDelayedFn } from '@reactutils/use-debounce';
 
 function Input({ defaultValue }) {
   const [value, setValue] = useState(defaultValue);
@@ -135,5 +135,5 @@ const debouncedFunction = useDelayedFn(myFunction, 300, { leading: true, trailin
 With the `leading` option enabled and `trailing` option disabled, the `myFunction` will execute immediately upon being called, and subsequent calls during the debounce timeout will not trigger additional executions.
 
 
-[package-npm-link]: https://www.npmjs.com/package/@reactutils/useDebounce
-[package-bundlephobia]: https://bundlephobia.com/package/@reactutils/useDebounce
+[package-npm-link]: https://www.npmjs.com/package/@reactutils/use-debounce
+[package-bundlephobia]: https://bundlephobia.com/package/@reactutils/use-debounce
