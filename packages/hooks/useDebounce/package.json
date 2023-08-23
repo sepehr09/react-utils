@@ -1,0 +1,41 @@
+{
+  "name": "@reactutils/use-debounce",
+  "version": "1.0.0",
+  "description": "this hook delays function execution until a specified period of inactivity, useful for optimizing user input-related actions.",
+  "author": "Alireza Hamzeh <alireza.hamzeh7713@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/sepehr09/react-utils.git",
+    "directory": "package/hooks/useDebounce"
+  },
+  "homepage": "https://github.com/sepehr09/react-utils/tree/main/packages/hooks/useDebounce",
+  "keywords": [
+    "useDebounce",
+    "react hook",
+    "debounce",
+    "useLayoutEffect"
+  ],
+  "main": "./index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/d/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && yarn build:rollup",
+    "build:rollup": "NODE_ENV=production rollup -c --bundleConfigAsCjs",
+    "build:tsc": "rm -rf dist && yarn build:ts:esm && yarn build:ts:cjs",
+    "build:ts:esm": "tsc -p tsconfig.json",
+    "build:ts:cjs": "tsc -p tsconfig.cjs.json"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17 || ^18",
+    "react-dom": "^16.8.0 || ^17 || ^18"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=12.22.0"
+  }
+}
