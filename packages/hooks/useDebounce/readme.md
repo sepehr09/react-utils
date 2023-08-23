@@ -48,7 +48,7 @@ export default function Input() {
 
 ## Usage of `useDelayedFn`
 
-The `useDelayedFn` hook is suitable for situations where you want to debounce the execution of a callback function. This is helpful when dealing with actions that can be triggered frequently, such as handling window resize events.
+The `useDelayedFn` hook is suitable for situations where you want to debounce the execution of a callback function.
 
 ```jsx
 import React, { useState } from 'react';
@@ -82,13 +82,22 @@ function Input({ defaultValue }) {
 
 Both the `useDebounce` and `useDelayedFn` hooks offer the ability to provide additional options as a third argument. These options allow you to customize the behavior of the debouncing process according to your requirements.
 
-## Common Options
+Of course, here's the modified document without the example column:
 
-Option	Default	Description
-maxWait	-	Specifies the maximum time the function (func) is allowed to be delayed before it's invoked.
-leading	-	When this parameter is enabled, the function will be executed once immediately when called. Subsequent calls will be debounced until the timeout expires.
-trailing	true	If enabled, this parameter executes the function after the debounce timeout.
-equalityFn	(prev, next) => prev === next	(Only for useDebounce) A comparator function that determines whether the timeout should be started.
+---
+
+## Debounce Options for `useDebounce` and `useDebouncedCallback`
+
+Both the `useDebounce` and `useDebouncedCallback` hooks offer the ability to provide additional options as a third argument. These options allow you to customize the behavior of the debouncing process according to your requirements.
+
+### Common Options
+
+| Option     | Default | Description                                                                                           |
+|------------|---------|-------------------------------------------------------------------------------------------------------|
+| maxWait    | -       | Specifies the maximum time the function (`func`) is allowed to be delayed before it's invoked.     |
+| leading    | -       | When this parameter is enabled, the function will be executed once immediately when called. Subsequent calls will be debounced until the timeout expires. |
+| trailing   | true    | If enabled, this parameter executes the function after the debounce timeout.                        |
+| equalityFn | (prev, next) => prev === next | *(Only for `useDebounce`)* A comparator function that determines whether the timeout should be started. |
 
 
 #### `maxWait` Option
@@ -128,5 +137,5 @@ With the `leading` option enabled and `trailing` option disabled, the `myFunctio
 
 ## Links
 
-- [NPM Package](https://www.npmjs.com/package/@reactutils/useDebounce)
-- [Bundlephobia Stats](https://bundlephobia.com/package/@reactutils/useDebounce)
+- [package-npm-link](https://www.npmjs.com/package/@reactutils/useDebounce)
+- [package-bundlephobia](https://bundlephobia.com/package/@reactutils/useDebounce)

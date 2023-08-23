@@ -2,52 +2,32 @@ import { useRef, useEffect, useMemo } from 'react';
 import type { DebouncedState, Options } from './types';
 
 /**
- * Creates a debounced function that delays invoking `func` until after `delay`
- * milliseconds have elapsed since the last time the debounced function was
- * invoked, or until the next browser frame is drawn.
- *
- * The debounced function comes with a `cancel` method to cancel delayed `func`
- * invocations and a `flush` method to immediately invoke them.
- *
- * You can provide `options` to customize the behavior of the debounced function.
- *
- * @category Function
- * @param {Function} func The function to debounce.
- * @param {number} [delay=0]
- *   The number of milliseconds to delay before invoking `func`.
- *   If omitted, the delay will be handled using `requestAnimationFrame` (if available).
- * @param {Object} [options={}] The options object.
- * @param {boolean} [options.leading=false]
- *   Specify whether `func` should be invoked on the leading edge of the timeout.
- * @param {number} [options.maxWait]
- *   The maximum time `func` is allowed to be delayed before it's invoked.
- * @param {boolean} [options.trailing=true]
- *   Specify whether `func` should be invoked on the trailing edge of the timeout.
- * @returns {Function} Returns the new debounced function.
- *
  * @example
+ *```ts
+ *import React, { useState } from 'react';
+ *import { useDelayedFn } from '@reactutils/useDebounce';
  *
- * // Debounce resize handling to optimize for window size changes.
- * const handleResize = useDebouncedCallback(calculateLayout, 150);
- * window.addEventListener('resize', handleResize);
+ *function Input({ defaultValue }) {
+ *  const [value, setValue] = useState(defaultValue);
+ *  const debouncedCallback = useDelayedFn(
+ *    (value) => {
+ *      setValue(value);
+ *    },
+ *    { delay, maxWait: 2000 }
+ *  );
  *
- * // Debounce click handling to prevent rapid consecutive invocations.
- * const handleClick = useDebouncedCallback(sendMail, 300, {
- *   leading: true,
- *   trailing: false,
- * });
- * <button onClick={handleClick}>Click Me</button>
- *
- * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
- * const debouncedLog = useDebouncedCallback(batchLog, 250, { maxWait: 1000 });
- * const source = new EventSource('/stream');
- * source.addEventListener('message', debouncedLog);
- *
- * // Cancel the trailing debounced invocation.
- * window.addEventListener('popstate', debouncedLog.cancel);
- *
- * // Check for pending invocations.
- * const status = debouncedLog.isPending() ? "Pending..." : "Ready";
+ *  return (
+ *    <div>
+ *      <input
+ *        defaultValue={defaultValue}
+ *        onChange={(e) => debouncedCallback(e.target.value)}
+ *      />
+ *      <p>Debounced value: {value}</p>
+ *      <button onClick={debouncedCallback.cancel}>Cancel Debounce cycle</button>
+ *    </div>
+ *  );
+ *}
+ *```
  */
 
 export function useDelayedFn<T extends (...args: any) => ReturnType<T>>(
@@ -71,7 +51,8 @@ export function useDelayedFn<T extends (...args: any) => ReturnType<T>>(
   }, [func]);
 
   /* ------- Determine whether to use requestAnimationFrame for waiting ------- */
-  const shouldUseRequestAnimationFrame = !delay && delay !== 0 && typeof window !== 'undefined';
+  const shouldUseRequestAnimationFrame =
+    !delay && delay !== 0 && typeof window !== 'undefined';
 
   /* --------------------- Validate the provided function --------------------- */
   if (typeof func !== 'function') {
@@ -109,8 +90,12 @@ export function useDelayedFn<T extends (...args: any) => ReturnType<T>>(
       return (resultRef.current = funcRef.current.apply(thisArg, args as any));
     };
 
-    const initializeDebounceTimer = (pendingFunc: () => void, delay: number) => {
-      if (shouldUseRequestAnimationFrame) cancelAnimationFrame(timerIdRef.current!);
+    const initializeDebounceTimer = (
+      pendingFunc: () => void,
+      delay: number
+    ) => {
+      if (shouldUseRequestAnimationFrame)
+        cancelAnimationFrame(timerIdRef.current!);
       timerIdRef.current = shouldUseRequestAnimationFrame
         ? requestAnimationFrame(pendingFunc)
         : (setTimeout(pendingFunc, delay) as unknown as number);
@@ -176,7 +161,9 @@ export function useDelayedFn<T extends (...args: any) => ReturnType<T>>(
         if (!timerIdRef.current && mountedRef.current) {
           lastInvokeTimeRef.current = lastCallTimeRef.current;
           initializeDebounceTimer(timerExpired, delay ?? 0);
-          return leading ? invokeFunc(lastCallTimeRef.current) : resultRef.current;
+          return leading
+            ? invokeFunc(lastCallTimeRef.current)
+            : resultRef.current;
         }
 
         if (maxing) {
@@ -216,7 +203,14 @@ export function useDelayedFn<T extends (...args: any) => ReturnType<T>>(
     };
 
     return debouncedFunc;
-  }, [leading, maxing, delay, maxWait, trailing, shouldUseRequestAnimationFrame]);
+  }, [
+    leading,
+    maxing,
+    delay,
+    maxWait,
+    trailing,
+    shouldUseRequestAnimationFrame,
+  ]);
 
   return debounced;
 }

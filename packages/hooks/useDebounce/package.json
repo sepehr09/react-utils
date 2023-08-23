@@ -14,8 +14,7 @@
   "keywords": [
     "useDebounce",
     "react hook",
-    "debounce",
-    "useLayoutEffect"
+    "debounce"
   ],
   "main": "./index.js",
   "module": "./dist/esm/index.js",
