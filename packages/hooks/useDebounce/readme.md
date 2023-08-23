@@ -3,6 +3,7 @@
 [![NPM](https://img.shields.io/npm/v/@reactutils/useDebounce.svg)][package-npm-link]
 [![NPM](https://img.shields.io/bundlephobia/min/@reactutils/useDebounce)][package-bundlephobia]
 
+
 ## Installation
 
 You can install the `@reactutils/useDebounce` package using either npm or Yarn:
@@ -134,8 +135,5 @@ const debouncedFunction = useDelayedFn(myFunction, 300, { leading: true, trailin
 With the `leading` option enabled and `trailing` option disabled, the `myFunction` will execute immediately upon being called, and subsequent calls during the debounce timeout will not trigger additional executions.
 
 
-
-## Links
-
-- [package-npm-link](https://www.npmjs.com/package/@reactutils/useDebounce)
-- [package-bundlephobia](https://bundlephobia.com/package/@reactutils/useDebounce)
+[package-npm-link]: https://www.npmjs.com/package/@reactutils/useDebounce
+[package-bundlephobia]: https://bundlephobia.com/package/@reactutils/useDebounce
