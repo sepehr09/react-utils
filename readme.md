@@ -10,3 +10,4 @@ A collection of useful React Hooks, utilities and Components.
 *   [usePrevious](/packages/hooks/usePrevious/readme.md) - usePrevious hook for react
 *   [useWindowsSize](/packages/hooks/useWindowsSize/readme.md) - useWindowsSize hook for react
 *   [useLocalStorage](/packages/hooks/useLocalStorage/readme.md) - useLocalStorage hook for react
+*   [useDebounce](/packages/hooks/useDebounce/readme.md) - useDebounce hook for react
